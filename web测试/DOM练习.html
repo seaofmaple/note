@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <link rel="stylesheet" href="css/dom.css">
+    <script>
+        window.onload = function(){
+            var table = document.getElementsByTagName("table");
+            //获取id为name的input标签
+            var name = document.getElementById("name");
+            //获取id为email的标签
+            var email = document.getElementById("email");
+            //获取id为salary的标签
+            var salary = document.getElementById("salary");
+            //获取id为submit的标签
+            var submit = document.getElementById("submit");
+            submit.onclick = function(){
+                //获取input里面的填写值
+                //alert(name.value);
+                //新建一个元素节点tr即<tr></tr>标签
+                var tr = document.createElement("tr");
+                //创建tr标签里面的各个td标签
+                var nameTd = document.createElement("td"); 
+                nameTd.innerHTML = name.value;               
+                var emailTd = document.createElement("td");
+                emailTd.innerHTML = email.value;                 
+                var salaryTd = document.createElement("td"); 
+                salaryTd.innerHTML = salary.value;                
+                var aTd = document.createElement("td");
+                //创建a超链接标签
+                var a = document.createElement("a");
+                a.href = "";
+                a.onclick = function(){
+                    //获取要删除的tr
+                    var info = this.parentNode.parentNode;
+                    //获取删除的名字
+                    var name = info.children[0].innerHTML;
+                    //confirm()用来弹出一个警示框，确认或者不是，是返回true，不是返回false
+                    var flag = confirm("确认删除"+name+"吗?");
+                    if (flag) {
+                            //父节点removeChild
+                            info.parentNode.removeChild(info);
+                            } 
+                    //在单击响应函数里面return false 来取消点击超链接的默认页面跳转行为
+                    return false;   
+                }
+                a.innerText = "delete";
+                //把tr,td标签按照结构连接起来               
+                if (name.value && email.value && salary.value) {
+                    //tr节点里面的内容
+                    /* tr.innerHTML = "<td>" + name.value +"</td>" + 
+                    "<td>" + email.value +"</td>" +"<td>" 
+                    + salary.value +"</td>" +
+                    "<td><a href='?id = 000'>delete</a></td>"; 
+                    //在table标签下创建一个tr节点
+                    table[0].appendChild(tr);  */
+                    tr.appendChild(nameTd);                
+                    tr.appendChild(emailTd);                
+                    tr.appendChild(salaryTd);                
+                    tr.appendChild(aTd);
+                    aTd.appendChild(a); 
+                    //table[0].appendChild(tr);//这样添加会在tbody外面添加可能会有隐患所以要添加到tbody里面
+                    //tbody是table的第一个子元素，在浏览器里面会自动加入这一个
+                    var tBody = table[0].getElementsByTagName("tbody")[0];
+                    tBody.appendChild(tr);
+                }
+            }
+            //获取删除的超链接
+            var allA = document.getElementsByTagName("a");
+            //为每一个删除的超链接添加一个删除的函数
+                for(var i = 0; i < allA.length; i++){
+                allA[i].onclick = function(){
+                    //获取要删除的tr
+                    var info = this.parentNode.parentNode;
+                    //获取删除的名字
+                    var name = info.children[0].innerHTML;
+                    //confirm()用来弹出一个警示框，确认或者不是，是返回true，不是返回false
+                    var flag = confirm("确认删除"+name+"吗?");
+                    if (flag) {
+                        //父节点removeChild
+                        info.parentNode.removeChild(info);
+                    } 
+                    //在单击响应函数里面return false 来取消点击超链接的默认页面跳转行为
+                    return false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="table">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Email</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>122</td>
+                <td>122@qq.com</td>
+                <td>20000</td>
+                <td><a href="?id = 000">delete</a></td>
+            </tr>
+        </table>
+    </div>
+    <div id="formTable">
+        <h3>添加新的成员</h3>
+        Name:<input type="text" id="name"> 
+        Email:<input type="email" id="email">
+        Salary:<input type="text" id="salary">
+        <button id="submit">submit</button>
+    </div>
+</body>
+</html>

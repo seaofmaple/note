@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>currying</title>
+</head>
+<body>
+  <script>
+    //利用闭包保存fn的参数
+    function currying(fn) {
+      let param = []
+      const next = (...args) => {
+        param = [...param, ...args]
+        if(param.length < fn.length) {
+          return next
+        } else {
+          return fn.apply(fn, param)
+        }
+      }
+      return next
+    }
+    let sum = (a,b,c,d) => {
+      return a + b + c + d
+    }
+    let curryingSum = currying(sum)
+    let res = curryingSum(1)(2)(3)(4)
+    console.log(res);
+  </script>
+</body>
+</html>

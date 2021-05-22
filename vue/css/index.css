@@ -1,0 +1,14 @@
+*{
+  margin: 0 auto;
+  padding: 0;
+}
+td{
+  border-right: 1px solid black;
+}
+table {
+  border: 1px solid pink;
+  border-radius: 10px;
+  border-spacing: 1;
+  box-shadow: 2px 2px 2px #ccc;
+  border-spacing: 0;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组的操作方法</title>
+    <!-- concat(),slice(),splice(); -->
+    <script>
+        var num = new Array();
+        // 1. concat(),这个方法主要用于接收数组中的元素并且可以在接收的数组的后面加入concat()里面的参数
+        num = ['red', 'blue', 'green', 'brown'];
+        var num1 = num.concat('yellow', ['black', 'pink']);
+        console.log(num);
+        console.log(num1);// "red" "blue" "green" "brown""yellow""black" "pink"
+        // 2. slice(),基于当前数组的一个或者多个项新建一个数组
+        var num2 = num.slice(1); // 从下标1开始
+        var num3 = num.slice(1,3); //从1到2
+        console.log(num2);
+        console.log(num3);
+        // 3. splice(),向数组里面插入项可以用于删除、插入和替换；splice(x, y, z1，z2....)x表示删除的第一项的位置，y表示要删除的项数，
+        //z表示加入的数据
+        //1.删除
+        var num4 = num.splice(0,1);//删除第一项；
+        console.log(num4);
+        document.write(num + '\n');//blue,green,brown
+        //2.插入
+        var num5 = num.splice(1,0,6,7);
+        console.log(num5);
+        document.write('\n' + num);//blue,6,7,green,brown
+        //3.替换
+        var num6 = num.splice(1,1,'替换');
+        console.log(num6);
+        document.write(num);//blue,替换,7,green,brown
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

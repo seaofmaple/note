@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* function Fn(){
+            this.test1 = function(){
+                console.log('test1()');
+            }
+        }
+        Fn.prototype.test2 = function(){
+            console.log('test2()');
+        }
+        var fn = new Fn();
+        fn.test1();
+        fn.test2();
+        console.log(fn.__proto__);
+        var A = 2;
+        console.log(A.prototype);//undefined
+        function foo(a) {
+            console.log(a + b);
+            //var b = a;
+        }
+        var b = 2;
+        foo(2); */
+        /* ({
+        x: 10,
+        foo: function () {
+        function bar() {
+            console.log(x);
+            console.log(y);
+            console.log(this.x);
+        }
+        with (this) {
+            var x = 20;
+            var y = 30;
+            bar.call(this);
+        }
+        }
+        }).foo();
+        //undefined 30 20
+        var obj = {
+            a: 20
+        };
+        with(obj){
+            var a = 40;
+            var b = 90;
+        }
+        console.log(a);//undefined
+        console.log(b);//90 */
+        console.log(Object.prototype instanceof Object);//false
+        console.log(Function.prototype instanceof Object);//true
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

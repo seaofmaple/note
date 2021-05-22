@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let num = [1, 2, 3, 3, 4, 4, 5];
+        num.forEach(element => {
+            console.log(element);
+        });
+        // let obj = {
+        //     output(value){
+        //         console.log(value);
+        //     },
+        //     outputDate(date){
+        //         date.forEach(function(value){
+        //             this.output(value);
+        //         },this)
+        //     }
+        // }
+        // let set = new Set([1, 2]);
+        // obj.outputDate(set);
+        console.log([].concat(...new Set(num)));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

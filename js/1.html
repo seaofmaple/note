@@ -1,0 +1,68 @@
+<html>
+<head>
+<script type="text/javascript">
+function getValue () {
+  var x=document.getElementById("myHeader")
+  alert(x.innerHTML)
+  }
+
+var num = parseInt("AF", 16);
+console.log(num);
+var num1 = parseInt("10", 2);
+console.log(num1);
+var str = '\u03a3';
+console.log(str);
+console.log(typeof(null));
+</script>
+</head> 
+<body>
+
+<h1 id="myHeader" onclick="getValue()">This is a header</h1>
+<p>Click on the header to alert its value</p>
+<script>
+  for (var propName in window) {
+    document.write(propName + '\t');
+  }
+  var num = 0;
+  start: for (var i = 0; i <10; i++) {
+    for (var j = 0; j < 10; j++) {
+      if (i == 5 && j == 5) {
+        continue start;
+      }
+      num++;
+    }
+  }
+  document.write('\n' + num);
+  var person = new Object();
+  person.name = 'maple';
+  document.write(person.name);
+  var obj1 = new Object();
+  var obj2  = obj1;
+  obj1.name = 'jack';
+  document.write(obj2.name);
+  var num5 = 10;
+  function getName () {
+    var num5 = 10; //局部变量函数完成后就被销毁；对于函数内部定义的new object()即在函数内部重新引用了对象，该对象在函数完成以后也会被销毁；
+  }
+  console.log(num5);
+  function set (obj) {
+    obj.name = '123';
+    color = 'red';
+    obj = new Object();
+    obj.name = '456';
+  }
+  var personal = new Object();
+  set(personal);
+  console.log(personal);
+  var test = new Object();
+  test.name = '123';
+  var color = 'blue';
+  document.write(personal.name);
+  document.write(window.color);
+  document.write('\t' + Math.max(1, 2, 4));
+  document.write('\t' + Math.min(1, 2, 4));
+  var color = ['red', 'blue', 'green'];
+  alert(color.join('&&'));
+</script>
+</body>
+</html>

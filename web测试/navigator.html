@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log(navigator.userAgent);
+        console.log(navigator.appName);
+        /* 
+        alert(ActiveXObject); 
+        IE独有的一个属性，是一个构造函数
+        JavaScript中ActiveXObject对象是启用并返回 Automation 对象的引用。
+            使用方法：
+        newObj = new ActiveXObject( servername.typename[, location])
+        ActiveXObject 对象语法有这些部分：其中newObj是必选项。要赋值为 ActiveXObject 的变量名。
+        1. servername是必选项。提供该对象的应用程序的名称。
+        1. typename是必选项。要创建的对象的类型或类。
+        1. location是可选项。创建该对象的网络服务器的名称。
+
+        切记：ActiveX是微软的东西，故而这玩意儿只有IE才支持！
+        */ 
+        if("ActiveXObject" in window){
+            alert("我是IE");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

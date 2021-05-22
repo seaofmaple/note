@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            background-color: #bfa;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            //获取id为box的div
+            var box = document.getElementById("box");
+            setInterval(function(){
+            //在document对象上设置一个按键按下的函数
+            document.onkeydown = function(event){
+                event = event || window.event;
+                var speed = 10;
+                if(event.ctrlKey){
+                    speed = 50;
+                }
+                switch(event.keyCode){
+                    case 37:
+                        box.style.left = box.offsetLeft - speed + "px";
+                        break;
+                    case 38:
+                        box.style.top = box.offsetTop - speed + "px";
+                        break;
+                    case 39:
+                        box.style.left = box.offsetLeft + speed + "px";
+                        break;
+                    case 40:
+                        box.style.top = box.offsetTop + speed + "px";
+                        break;
+                }
+            }
+            },25)
+        }
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

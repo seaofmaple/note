@@ -1,0 +1,14 @@
+#table{
+    margin: 50px auto;
+}
+tr{
+    text-align: center;
+    margin-top: 0px;
+}
+td{
+    border-right: 1px solid black;
+    border-bottom: 1px solid #000;
+}
+a{
+    text-decoration: none;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>位置方法、迭代方法、归并方法</title>
+    <!-- 位置方法提供了两个方法：indexOf()和lastIndexOf(),都接收两个参数要查找的项和查找的起点位置（可选）；
+        indexOf()从前往后只找一个下标0开始，lastIndexOf()从后往前； -->
+    <script>
+        //位置方法
+        //         0  1  2  3  4  5  6  7  8
+        var num = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+        var num1 = ['hello', 'world'];
+        console.log(num.indexOf(4));  //3
+        console.log(num.lastIndexOf(4));  //5
+        console.log(num.indexOf(2,4)); //7
+        console.log(num1.indexOf('hello'));  //0
+        console.log(num.indexOf(3,3)); //6
+        console.log(num.indexOf(4,2)); //3
+        //迭代方法
+        // 提供every()，filter(),forEach(),map(),some()五个方法
+        //1. every()对数组里面的每一项运行给定函数，函数对每一项都返回true，则返回true
+        var everyResult = num.every(function(item, index, array) {
+            return (item > 0);
+        });
+        console.log(everyResult);  //true
+        //2. filter()对数组里面的每一项运行给定函数，返回该函数会返回true的项组成的数组
+        var filterResult = num.filter(function(item, index, array){
+            return (item > 3);
+        });
+        console.log(filterResult);  //[4, 5, 4]
+        //3. forEach()对数组里面的每一项运行给定函数,没有返回值
+        num.forEach(function (item, index, array){
+            num[9] = 9;
+        });                                            // |
+        console.log(num);  // [1, 2, 3, 4, 5, 4, 3, 2, 1, 9]
+        // 4. map()对数组里面的每一项运行给定函数,每次返回函数调试的结果组成的数组
+        var mapResult = num.map(function (item, index, array){
+            return item * 2;
+        });
+        console.log(mapResult);  //[2, 4, 6, 8, 10, 8, 6, 4, 2, 18]
+        // 5. some()对数组里面的每一项运行给定函数,如果该函数对数组里任意一项是true，则返回true
+        var someResult = num.map(function (item, index, array){
+            return (item > 0);
+        });
+        console.log(someResult);  //[true, true, true, true, true, true, true, true, true, true]
+        //归并方法
+        //提供reduce()和reduceRight()两个方法，两个方法都会迭代数组的所有项，然后构建一个最终返回的值，
+        //reduce()是从第一项开始的而reduceRight()则是从最后一项开始的
+        //都提供两个参数1. 在每一项上调用的函数{函数接收4个参数，前一个值，当前值，项的索引和数组对象}和作为归并基础的初始值(可选)
+        var value = [1, 2, 3, 4, 5];
+        var sum = value.reduce(function (pre, cur, index, array){
+            return pre + cur;
+        })
+        console.log(sum);  //15
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

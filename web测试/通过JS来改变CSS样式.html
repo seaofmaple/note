@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+    div{
+        width: 150px;
+        height: 150px;
+        background-color: #442255;
+        margin-top: 20px;
+    }
+    </style>
+    <script>
+        window.onload = function(){
+            var btn = document.getElementById("btn");
+            var div = document.getElementsByTagName("div")[0];
+            btn.onclick = function(){
+                //只能修改内联的CSS样式
+                div.style.backgroundColor = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="btn">点我一下</button>
+    <div></div>
+</body>
+</html>

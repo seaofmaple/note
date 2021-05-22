@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function * gen(){
+            console.log('1111');
+            yield '你好';
+            console.log('2222');
+            yield '我的';
+            console.log('3333');
+            yield '第一个生成器';
+            console.log('4444');
+        }
+        let iterator = gen();
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

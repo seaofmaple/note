@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>栈与队列</title>
+    <!-- 栈是一种LIFO的数据结构；即是最后进来最先出去，提供了push()和pop()方法 -->
+    <script>
+         var num = new Array();
+         var count = num.push(1,2);
+        //  alert(count);
+         count = num.push(5); //输出的是栈里面的元素的个数；
+         alert(count);//3
+         var item = num.pop();//输出的是栈顶的一个元素；
+         alert(item);//5同时num.length-1
+         //下面是队列的方法同样有push()和pop()方法另外加了一个shift()方法用于输出数组里面的第一个元素unshift()方法用于在数组前端加入元素
+         var fir = num.shift();
+         alert(fir);//1同时num.length-1
+         var pushFir = num.unshift(9, 6);
+         alert(pushFir);//5-2=3
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

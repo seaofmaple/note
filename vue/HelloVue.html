@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelloVue</title>
+</head>
+<body>
+    <!-- <div id="app">{{message}}</div> -->
+    <div id="app1" >
+        <h2 v-once>{{message}}</h2>
+        <ul>
+            <li v-for="item in movies">{{item}}</li>
+        </ul>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        const app = new Vue(
+        {
+            el:'#app1',
+            data: {
+                movies: ['钢铁侠', '蜘蛛侠', '美国队长'],
+                message: 'hhh'
+            }
+        });
+        app.message = '我变了';
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* setTimeout(() => {
+            console.log('22222');
+            alert('2222222')
+        }, 2000);
+        setTimeout(() => {
+            console.log('11111');
+            alert('1111111')
+        }, 1000);
+        alert('alert执行之前')
+        alert('alert执行')
+        alert('alert执行之后') */
+        /* const A = {
+            name: 'Tom',
+            age: 18,
+            setName: function(name){
+                this.name = name;
+                console.log(this);
+            }
+        }
+        let {name,age,setName} = A;
+        console.log(name);
+        console.log(age);
+        console.log(setName);
+        setName('Aim');
+        console.log(name);//'Tom'
+        const we = {
+            name,
+            age,
+            improve(){
+                console.log('we')
+            }
+        }
+        console.log(we);
+         */
+         function add(a,b,...args){
+             console.log(args);
+             return a + b;
+         }
+         console.log(add(1,2,3,4,5,6));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

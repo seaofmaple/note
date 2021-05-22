@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- vue -->
+  <div id="app">
+    <h2>{{message}}</h2>
+    <cpn :c-musics="musics"></cpn>
+  </div>
+  <!-- 组件 -->
+  <template id="cpn">
+    <div>
+      <h2>你好</h2>
+      <ul>
+        <li v-for="music in cMusics">{{music}}</li>
+      </ul>
+    </div>
+  </template>
+  <script src="js/vue.js"></script>
+  <script>
+    const cpn = {
+      template: '#cpn',
+      data() {
+        return {}
+      },
+      // props: ['cMusics'] 数组方式
+      props: {
+        cMusics:{
+          type: Array,
+          default(){
+            return []
+          }
+        }
+      }
+    }
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'helloVue',
+        musics: ['see you again', 'blue']
+      },
+      components:{
+        cpn
+      }
+    })
+  </script>
+</body>
+</html>

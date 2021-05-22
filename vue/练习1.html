@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .isActive{
+    color: red;
+  }
+</style>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(item,index) in message"
+      v-bind:class="name !== index ? index : 'isActive'" 
+      @click="change(index)">
+        {{item}}
+      </li>
+    </ul>
+  </div>
+  <script src="js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: ['海王','蜘蛛侠','美国队长','火影忍者'],
+        name: -1
+      },
+      methods:{
+        change(index){
+          return this.name = index;
+        }
+      }
+    })
+  </script>
+</body>
+</html>

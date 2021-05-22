@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片切换</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script>
+        window.onload = function(){
+            var imgArr = ["img/test.jpeg", "img/2.jpg", "img/3.jpg"];
+            var index = 0;
+            var pre = document.getElementById("pre");
+            var next = document.getElementById("next");
+            var img = document.getElementsByTagName("img");
+            console.log(img[0].src);
+            pre.onclick = function(){
+                index--;
+                if(index < 0){
+                    index = imgArr.length - 1;
+                }
+                img[0].src = imgArr[index];
+            }
+            next.onclick = function(){
+                index++;
+                if(index == imgArr.length){
+                    index = 0;
+                }
+                img[0].src = imgArr[index];
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div id="outer">
+            <img src="img/test.jpeg" alt="1">
+            <button id="pre">上一张</button>
+            <button id="next">下一张</button>
+        </div>
+    </header>
+</body>
+</html>

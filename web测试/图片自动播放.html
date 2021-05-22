@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #img{
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            //获取img
+            var img = document.getElementById("img");
+            //建立一个数组用来保存img的路径
+            var imgArr = ["img/test.jpeg", "img/2.jpg", "img/3.jpg"];
+            //index用于保存当前的img的照片的路径的数组下标
+            var index = 0;
+            //获取开始按钮
+            var start = document.getElementById("start");
+            //定义一个变量用于保存定时器的标识
+            var timer;
+            start.onclick = function(){
+                //开始之前应该先确定不额外开启定时器
+                clearInterval(timer);
+                timer = setInterval(function(){
+                index++;
+                index = index % imgArr.length;
+                img.src = imgArr[index];
+            },1000);
+            };
+            //获取停止按钮
+            var stop = document.getElementById("stop");
+            stop.onclick = function(){
+                clearInterval(timer);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <img src="img/test.jpeg" alt="" id="img">
+    <br>
+    <button id="start">开始</button>
+    <br>
+    <button id="stop">停止</button>
+</body>
+</html>

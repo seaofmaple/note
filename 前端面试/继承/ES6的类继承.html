@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>类的继承</title>
+</head>
+<body>
+  <script>
+    class F {
+      constructor(name) {
+        this.name = name
+      }
+      sayName() {
+        console.log(this.name);
+      }
+    }
+    class f extends F {
+      constructor(name, age) {
+        super(name),
+        this.age = age
+      }
+    }
+    let a = new f('cat', 10)
+    a.sayName()
+  </script>
+</body>
+</html>

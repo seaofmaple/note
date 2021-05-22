@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    //     let game = {
+    //         name: 'lol',
+    //         up(){
+
+    //         },
+    //         down(){
+
+    //         }
+    //     }
+    //     let methods = {
+    //         up:Symbol(),
+    //         down: Symbol()
+    //     }
+    //     game[methods.up] = function(){
+    //         console.log('up');
+    //     }
+    //     game[methods.down] = function(){
+    //         console.log("down");
+    //     }
+    //     //console.log(game);
+    //     game[methods.down]();
+    let banJi = {
+        name: '1班',
+        students:[
+            '1',
+            '2',
+            '3',
+            '4'
+        ],
+        // [Symbol.iterator](){
+        //     let index = 0;
+        //     return { 
+        //         next:() => {
+        //             if(index < this.students.length){
+        //                  return  {
+        //                     value: this.students[index++],
+        //                     done: false
+        //                     };
+        //             } else{
+        //                 return {
+        //                     value: undefined,
+        //                     done: true
+        //                     };
+        //                 }
+        //         }
+        //     }
+        // }
+        *[Symbol.iterator](){
+            for(let item of this.students){
+                yield item;
+            }
+        }
+    }
+    for(let v of banJi){
+        console.log(v);
+    }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

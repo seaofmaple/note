@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数组去重</title>
+</head>
+<body>
+  <script>
+    //ES5实现
+    function unique(arr) {
+      var res = arr.filter(function(item, index, array) {
+        return arr.indexOf(item) === index
+      })
+      return res
+    }
+    
+    //ES6实现
+    let res = [...new Set(arr)]
+  </script>
+</body>
+</html>

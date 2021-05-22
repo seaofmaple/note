@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全选</title>
+    <script>
+        window.onload = function(){
+            var check = document.getElementsByName("habit");
+            //全选
+            var all = document.getElementById("all");
+            all.onclick = function(){
+                var check = document.getElementsByName("habit");
+                for(var i = 0;i < check.length; i++){
+                    check[i].checked = true;
+                }
+                // document.getElementById("checkAllVox").checked = true;
+            };
+            //全不选
+            var none = document.getElementById("none");
+            none.onclick = function(){
+                var check = document.getElementsByName("habit");
+                for(var i = 0;i < check.length; i++){
+                    check[i].checked = false;
+                }
+                // document.getElementById("checkAllVox").checked = true;
+            };
+            //反选
+            var reverse = document.getElementById("reverse");
+            reverse.onclick = function(){
+                var check = document.getElementsByName("habit");
+                for(var i = 0;i < check.length; i++){
+                    check[i].checked = !check[i].checked;
+                }
+            };
+            //提交
+            var submit = document.getElementById("submit");
+            submit.onclick = function(){
+                var check = document.getElementsByName("habit");
+                for(var i = 0;i < check.length; i++){
+                    if(check[i].checked == true) {
+                        alert(check[i].value);
+                    }
+                }
+            };
+            //checkAllBox同步
+            var checkAllBox = document.getElementById("checkAllBox");
+            checkAllBox.onclick = function(){
+                var check = document.getElementsByName("habit");
+                for (let i = 0; i < check.length; i++) {
+                    check[i].checked = true;
+                }
+            };
+            //habit同步
+            
+        }
+    </script>
+</head>
+<body>
+    <div class="choose">
+        <p>请选择你喜欢的运动</p>
+        <input type="checkbox" name="" id="checkAllBox">全选/全不选
+        <input type="checkbox" value="篮球" name="habit">篮球
+        <input type="checkbox" value="羽毛球" name="habit">羽毛球
+        <input type="checkbox" value="足球" name="habit">足球
+        <input type="checkbox" value="乒乓球" name="habit">乒乓球
+        <button id="all">全选</button>
+        <button id="none">全不选</button>
+        <button id="reverse">反选</button>
+        <button id="submit">提交</button>
+    </div>
+</body>
+</html>

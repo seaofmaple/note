@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+    <script>
+        //检测数组的两个方法；
+        //1. Array.isArray()
+        //2. instanceof + 数据类型
+        var num = [1, 2, 3, 4, 5, null];
+        alert(num.join('||'));
+        if (Array.isArray(num)) {    //Array,isArray()可以看出这是不是一个数组；
+            alert('这是一个数组');
+        }
+        if (num instanceof Array) {       //instanceof + 数据类型可以判断这个变量是否是这一个数据类型；
+            console.log('这是一个数组');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
