@@ -8,7 +8,7 @@
 </head>
 <body>
   <script>
-    function myNew(fn, ...args) {
+    function _new(fn, ...args) {
       //将obj绑定到fn的原型链上面
       let obj = Object.create(fn.prototype)
       let res = fn.apply(obj, args)
