@@ -8,7 +8,7 @@
 </head>
 <body>
   <script>
-    function _new(fn, ...args) {
+    function create(fn, ...args) {
       //将obj绑定到fn的原型链上面
       let obj = Object.create(fn.prototype)
       let res = fn.apply(obj, args)
@@ -20,7 +20,7 @@
     Person.prototype.sayName = function () {
       return this.name
     }
-    let student = myNew(Person, 'tom')
+    let student = create(Person, 'tom')
     console.log(Object.getPrototypeOf(student));
     console.log(student.sayName());
   </script>
