@@ -8,9 +8,21 @@
 </head>
 <body>
   <script>
-    function myNew() {
-
+    function _new(fn, ...args) {
+      //将obj绑定到fn的原型链上面
+      let obj = Object.create(fn.prototype)
+      let res = fn.apply(obj, args)
+      return typeof res == 'string' ? res : obj
     }
+    function Person(name) {
+      this.name = name
+    }
+    Person.prototype.sayName = function () {
+      return this.name
+    }
+    let student = myNew(Person, 'tom')
+    console.log(Object.getPrototypeOf(student));
+    console.log(student.sayName());
   </script>
 </body>
 </html>
